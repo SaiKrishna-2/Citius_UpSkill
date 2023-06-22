@@ -25,7 +25,7 @@ namespace Entities
             return(card);
         }
 
-        public Flashcard EditFlashcard(Flashcard f, Guid id)
+        public Flashcard EditFlashcard(Flashcard f)
         {
             context.Flashcards.Update(f);
             context.SaveChanges();

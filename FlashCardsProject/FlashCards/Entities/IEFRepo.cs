@@ -12,7 +12,7 @@ namespace Entities
         IEnumerable<Flashcard> GetAllFlashcard();
         Flashcard GetFlashcard(Guid id);
         Flashcard AddFlashcard(Flashcard f);
-        Flashcard EditFlashcard(Flashcard f, Guid id);
+        Flashcard EditFlashcard(Flashcard f);
         Flashcard DeleteFlashcard(Guid id);
     }
 }

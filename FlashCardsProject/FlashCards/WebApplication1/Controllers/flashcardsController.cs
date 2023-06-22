@@ -74,7 +74,7 @@ namespace Services.Controllers
         }
 
         [HttpPut("edit")]
-        public IActionResult editFlashCard(Flashcard card,Guid id)
+        public IActionResult editFlashCard([FromBody]Flashcard card,[FromHeader]Guid id)
         {
             try
             {

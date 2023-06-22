@@ -1,32 +1,45 @@
 ﻿using Entities.Entities;
+using Microsoft.EntityFrameworkCore.Query;
 
 namespace Entities
 {
     public class EFRepo : IEFRepo
     {
+        private readonly Project1Context context;
+        public EFRepo(Project1Context context)
+        {
+            this.context = context;
+        }
         public Flashcard AddFlashcard(Flashcard f)
         {
-            throw new NotImplementedException();
+            context.Flashcards.Add(f);
+            context.SaveChanges();
+            return (f);
         }
 
         public Flashcard DeleteFlashcard(Guid id)
         {
-            throw new NotImplementedException();
+            var card = context.Flashcards.Where(f => f.Id == id).FirstOrDefault();
+            context.Flashcards.Remove(card);
+            context.SaveChanges();
+            return(card);
         }
 
         public Flashcard EditFlashcard(Flashcard f, Guid id)
         {
-            throw new NotImplementedException();
+            context.Flashcards.Update(f);
+            context.SaveChanges();
+            return (f);
         }
 
-        public Flashcard GetALlFlashcard()
+        public IEnumerable<Flashcard> GetAllFlashcard()
         {
-            throw new NotImplementedException();
+            return context.Flashcards;
         }
 
         public Flashcard GetFlashcard(Guid id)
         {
-            throw new NotImplementedException();
+            return context.Flashcards.Where(f=>f.Id==id).FirstOrDefault();
         }
     }
 }

@@ -7,12 +7,12 @@ using Models;
 
 namespace BusinessLogic
 {
-    internal interface IFlashCards
+    public interface IFlashCards
     {
-        Flashcard GetALlFlashcard();
-        Flashcard GetFlashcard(Guid id);
-        Flashcard AddFlashcard(Flashcard f);
-        Flashcard EditFlashcard(Flashcard f,Guid id);
-        Flashcard DeleteFlashcard(Guid id);
+        public IEnumerable<Flashcard> GetAllFlashcard();
+        public Flashcard GetFlashcard(Guid id);
+        public Flashcard AddFlashcard(Flashcard f);
+        public Flashcard EditFlashcard(Flashcard f,Guid id);
+        public Flashcard DeleteFlashcard(Guid id);
     }
 }

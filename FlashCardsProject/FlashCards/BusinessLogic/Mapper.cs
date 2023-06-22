@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entities.Entities;
+using Microsoft.EntityFrameworkCore;
 using Models;
 
 namespace BusinessLogic
@@ -27,6 +28,11 @@ namespace BusinessLogic
                 Question = f.Question,
                 Answer = f.Answer,
             };
+        }
+
+        public static IEnumerable<Models.Flashcard> FlashcardMapper(IEnumerable<Entities.Entities.Flashcard> t)
+        {
+            return t.Select(FlashcardMapper).ToList();
         }
     }
 }

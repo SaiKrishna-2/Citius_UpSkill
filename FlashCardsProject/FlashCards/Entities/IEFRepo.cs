@@ -7,9 +7,9 @@ using Entities.Entities;
 
 namespace Entities
 {
-    internal interface IEFRepo
+    public interface IEFRepo
     {
-        Flashcard GetALlFlashcard();
+        IEnumerable<Flashcard> GetAllFlashcard();
         Flashcard GetFlashcard(Guid id);
         Flashcard AddFlashcard(Flashcard f);
         Flashcard EditFlashcard(Flashcard f, Guid id);

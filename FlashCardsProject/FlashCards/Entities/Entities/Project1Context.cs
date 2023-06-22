@@ -25,16 +25,16 @@ public partial class Project1Context : DbContext
     {
         modelBuilder.Entity<Flashcard>(entity =>
         {
-            entity
-                .HasNoKey()
-                .ToTable("flashcards");
+            entity.HasKey(e => e.Id).HasName("primarykeyconstraint");
 
-            entity.Property(e => e.Answer)
-                .IsUnicode(false)
-                .HasColumnName("answer");
+            entity.ToTable("flashcards");
+
             entity.Property(e => e.Id)
                 .HasDefaultValueSql("(newid())")
                 .HasColumnName("id");
+            entity.Property(e => e.Answer)
+                .IsUnicode(false)
+                .HasColumnName("answer");
             entity.Property(e => e.Question)
                 .IsUnicode(false)
                 .HasColumnName("question");

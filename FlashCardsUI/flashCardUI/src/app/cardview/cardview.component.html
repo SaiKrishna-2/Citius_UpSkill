@@ -1,0 +1,12 @@
+
+<div class="card-container" *ngFor="let c of cards;let i=index">
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>{{c.question}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="showAnswer(i)">Show Answer</button>
+    </mat-card-actions>
+    <mat-card-header  [style.visibility]="visibility[i]">{{c.answer}}</mat-card-header>
+  </mat-card>
+</div>

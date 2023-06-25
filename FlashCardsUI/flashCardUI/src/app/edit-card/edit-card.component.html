@@ -1,0 +1,20 @@
+
+<div class="newcardDialog">
+    <h1>Edit Card</h1>
+    <p style="color: gray;">Please Enter the following details.</p>
+    <form #editcardform="ngForm" (ngSubmit)="editCard(excard)">
+        <p>
+        <mat-form-field appearance="fill">
+          <mat-label>Enter Your Question</mat-label>
+          <input matInput name="question"  [(ngModel)]="excard.question">
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="fill" > 
+          <mat-label>Enter the Answer</mat-label>
+          <textarea matInput name="answer" style="height: 100px;" [(ngModel)]="excard.answer"></textarea>
+        </mat-form-field>
+    </p>
+    <button mat-fab extended color="primary" type="submit">Edit Card</button>
+    </form>
+    </div>

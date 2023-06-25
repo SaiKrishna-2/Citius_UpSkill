@@ -93,7 +93,7 @@ namespace Services.Controllers
         }
 
         [HttpDelete("delete")]
-        public IActionResult deleteFlashCard(Guid id)
+        public IActionResult deleteFlashCard([FromHeader]Guid id)
         {
             try
             {

@@ -1,0 +1,20 @@
+<div class="newcardDialog">
+<h1>Add New Card</h1>
+<p style="color: gray;">Please Enter the following details.</p>
+<form #addcardform="ngForm" (ngSubmit)="addCard(addcardform.value)">
+    <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Enter Your Question</mat-label>
+      <input matInput name="question" ngModel>
+    </mat-form-field>
+</p>
+<p>
+    <mat-form-field appearance="fill">
+      <mat-label>Enter the Answer</mat-label>
+      <textarea matInput name="answer" style="height: 80px;" ngModel></textarea>
+    
+    </mat-form-field>
+</p>
+<button mat-fab extended color="primary" type="submit">Add Card</button>
+</form>
+</div>

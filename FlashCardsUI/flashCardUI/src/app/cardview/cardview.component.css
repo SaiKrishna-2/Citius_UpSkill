@@ -10,3 +10,14 @@ button{
     color: white;
     margin: auto;
 }
+.image1 {
+    position: absolute;
+    top: 200px;
+    right:40px;
+  }
+  .image2 {
+    width: 18%;
+    position: absolute;
+    top: 200px;
+    left: 16px;
+  }

@@ -19,6 +19,7 @@ import {MatInputModule} from '@angular/material/input';
 import { FormsModule }   from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     CardviewComponent,
     TableviewComponent,
     AddCardComponent,
-    EditCardComponent
+    EditCardComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
